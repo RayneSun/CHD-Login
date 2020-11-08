@@ -180,6 +180,7 @@ def main():
             print(mess + " 今日已签到完成！")
         else:
             print(mess + " 密码错误！")
+    print("Designed by Rayne! \n")
     os.system('pause')
 
 
