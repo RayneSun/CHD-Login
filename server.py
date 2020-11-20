@@ -9,9 +9,9 @@ from wechatpy.utils import check_signature
 from wechatpy.exceptions import InvalidSignatureException
 from wechatpy.exceptions import InvalidAppIdException
 
-WECHAT_TOKEN = "rayneNB"
-ENCODING_AESKEY = "S8PNVvWvjWeEHLkxXQsPuAOwiBob3lFBgyWj9ppH2TL"
-APPID = 'wx76446f9d1e23ea1e'
+WECHAT_TOKEN = ""
+ENCODING_AESKEY = L"
+APPID = ''
 
 app = Flask(__name__)
 subscribe_message = "欢迎使用长大疫情自动填报系统。\n" \
@@ -24,7 +24,7 @@ subscribe_message = "欢迎使用长大疫情自动填报系统。\n" \
                     "生命不息，折腾不止"
 
 
-@app.route('/wechat', methods=["GET", "POST"])
+@app.route('/', methods=["GET", "POST"])
 def wechat():
     try:
         """对接微信公众号服务器"""
@@ -54,15 +54,9 @@ def wechat():
 
             # msg已经为解构的消息
             if msg.type == "text":
-                # 功能和彩蛋
-                logo = {"宋圆圆": replies.ImageReply(type='image', media_id='76bEgrqnVx638NHtgdYBi8QJfzcjNdYliT1U6WNc28M',
-                                                  message=msg),
-                        "宋文艳": '爱你哟宝贝~',
-                        "author": "Rayne",
+                logo = {
                         "count": admin.getAccount_num(),
-                        "我要打卡": admin.Introduce,
-                        "安全承诺": admin.safe_ntro,
-                        "原理": admin.HAHA,
+                        "我要打卡": admin.Introduce，
                         'error': admin.error_fail.returnError()
                         }
                 if logo.get(msg.content) is not None:
@@ -82,7 +76,7 @@ def wechat():
                     reply = create_reply(msg.event, msg)
             # 将字典转换为xml字符串
             elif msg.type == "image":
-                reply = replies.ImageReply(type='image', media_id='76bEgrqnVx638NHtgdYBi1ag-GqEmvYWIyDAcRUU8Q4',
+                reply = replies.ImageReply(type='image', media_id='',
                                            message=msg)
             else:
                 reply = create_reply('非法信息', msg)
