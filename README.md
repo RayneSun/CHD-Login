@@ -6,4 +6,3 @@
 使用方法：
 1.在Lists.json中添加要进行签到的人。
 2.编写一个cmd每日启动runner.py即可。
-3.server.py用于对接微信公众号
